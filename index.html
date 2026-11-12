@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MentX.org | Para mentes curiosas</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23002626' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10' stroke='%23002626'/><path d='M12 2C12 2 15 7 15 12C15 17 12 22 12 22' stroke='%23007554'/><path d='M12 2C12 2 9 7 9 12C9 17 12 22 12 22' stroke='%23007554'/><line x1='2' y1='12' x2='22' y2='12'/><path d='M17 7L19 5' stroke='%23e67e22' stroke-width='2.5'/><path d='M16 10L18 8' stroke='%23e67e22' stroke-width='2.5'/></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&family=Noto+Sans+Arabic&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo-container" onclick="showView('catalog')">
+        <!-- Inserta este código en tu archivo index.html dentro de la clase .logo-container -->
+<svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- El mundo / Nodo principal -->
+    <circle cx="12" cy="12" r="10" stroke="#002626" stroke-width="1.5"/>
+    
+    <!-- Líneas de conexión (Simbolizan rutas neuronales e idiomas) -->
+    <path d="M12 2C12 2 15 7 15 12C15 17 12 22 12 22" stroke="#007554" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M12 2C12 2 9 7 9 12C9 17 12 22 12 22" stroke="#007554" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="2" y1="12" x2="22" y2="12" stroke="#002626" stroke-width="1.5"/>
+    
+    <!-- El "Acento" del habla (Simboliza la comunicación) -->
+    <path d="M17 7L19 5" stroke="#e67e22" stroke-width="2" stroke-linecap="round"/>
+    <path d="M16 10L18 8" stroke="#e67e22" stroke-width="2" stroke-linecap="round"/>
+</svg>
+        <span class="brand">MentX.org</span>
+    </div>
+    <div class="nav-menu">
+        <button onclick="showView('catalog')">Cursos</button>
+        <button onclick="alert('Sesiones Zoom: Se coordinan por correo tras inscripción.')">Calendario</button>
+    </div>
+</nav>
+
+<main id="main-content">
+    <!-- El contenido se inyecta aquí -->
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+       <div class="footer-left">
+    <p>&copy; 2026 MentX. Por
+        <a href="https://f-jals.github.io" target="_blank" class="director-link">FJALS</a>
+    </p>
+</div>
+        <div class="footer-right">
+            <div class="combined-logos">
+                <a href="https://cuidadohumano.org" target="_blank" title="cuidadohumano.org">
+                    <!-- Sustituye con la ruta de tu imagen local si prefieres -->
+                    <img src="logo-ch.png" alt="CH | Cuidado Humano" class="logo-img">
+                </a>
+                
+                <a href="https://f-jals.github.io" target="_blank" title="Fundación Juan Alejhandro Lezama Suescun">
+                    <img src="logo-fjals.png" alt="FJALS" class="logo-img">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+:root {
+    --edx-blue: #002626;
+    --accent: #007554;
+    --text: #333;
+    --bg: #f8f9fa;
+}
+
+body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: var(--text); }
+
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); sticky: top; }
+.logo-container { display: flex; align-items: center; cursor: pointer; gap: 10px; }
+.brand { font-weight: 600; font-size: 1.5rem; color: var(--edx-blue); }
+
+/* Grid de Cursos Estilo edX */
+.catalog-header { text-align: center; padding: 50px 20px; background: var(--edx-blue); color: white; }
+.course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 40px 5%; }
+.course-card { background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e0e0e0; transition: 0.3s; }
+.course-card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.1); }
+.course-info { padding: 20px; }
+.badge { background: #eef2ff; color: #4338ca; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
+
+/* Aula Virtual */
+.classroom { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; padding: 30px 5%; }
+.video-container { background: #000; aspect-ratio: 16/9; margin-bottom: 20px; }
+.content-area { background: white; padding: 30px; border-radius: 8px; }
+.sidebar-info { background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #eee; height: fit-content; }
+
+.rtl { direction: rtl; font-family: 'Noto Sans Arabic', sans-serif; }
+.btn-primary { background: var(--accent); color: white; border: none; padding: 12px 24px; cursor: pointer; width: 100%; border-radius: 4px; font-weight: bold; }
+
+.footer {
+    background: #ffffff;
+    border-top: 1px solid #eee;
+    padding: 20px 5%;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.combined-logos {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Tamaño optimizado para logos en el footer */
+.logo-img {
+    height: 45px; /* Altura fija para mantener uniformidad */
+    width: auto;
+    filter: grayscale(20%); /* Un toque sutil de neuro-estética para no distraer */
+    transition: filter 0.3s ease;
+}
+
+.logo-img:hover {
+    filter: grayscale(0%);
+}
+
+.separator {
+    color: #ccc;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 0 5px;
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+.director-link {
+    color: #2c3e50; /* El mismo color oscuro del texto */
+    text-decoration: none; /* Quita el subrayado molesto */
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.director-link:hover {
+    color: #007554; /* Cambia al verde esmeralda al pasar el mouse */
+    text-decoration: underline; /* Aparece el subrayado solo al interactuar */
+}
