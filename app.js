@@ -72,9 +72,9 @@ function renderClassroom(index) {
             <aside class="sidebar-info">
                 <h3>Progreso y Tareas</h3>
                 <p>Este curso es para aprender <strong>a su propio ritmo</strong>.</p>
-                <p>Para obtener el certificado, debes completarlo.</p>
+                <p>Para participar en la convención, debes completarlo.</p>
                 <a href="${curso.tarea_url || '#'}" target="_blank">
-                    <button class="btn-primary" style="background:#2c3e50; margin-bottom:10px;">Ir a la evaluación</button>
+                    <button class="btn-primary" style="background:#2c3e50; margin-bottom:10px;">Ir al curso</button>
                 </a>
                 <hr>
                 <h4>Facilitadores</h4>
