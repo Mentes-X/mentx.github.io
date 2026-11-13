@@ -37,8 +37,8 @@ async function generateCertPDF(nombre, cursoObj, googleCode) {
 
     // Logos en márgenes superiores
     try {
-        doc.addImage("logo-rotary.png", 'PNG', 15, 15, 22, 22); 
-        doc.addImage("logo-abrol.png", 'PNG', width - 37, 15, 22, 22);
+        doc.addImage("logo-mentx.png", 'PNG', 15, 15, 22, 22); 
+        doc.addImage("logo-ch.png", 'PNG', width - 37, 15, 22, 22);
     } catch (e) { 
         console.warn("Logos no encontrados. Verifique las rutas."); 
     }
@@ -66,7 +66,7 @@ async function generateCertPDF(nombre, cursoObj, googleCode) {
     
     doc.setFontSize(15);
     doc.setTextColor(0, 0, 0);
-    doc.text(`Por haber aprobado el curso de:`, width / 2, 92, { align: "center" });
+    doc.text(`Por haber aprobado el curso de introducción a la:`, width / 2, 92, { align: "center" });
     doc.setFont("times", "bolditalic");
     doc.text(cursoObj.titulo, width / 2, 102, { align: "center" });
 
@@ -89,19 +89,19 @@ async function generateCertPDF(nombre, cursoObj, googleCode) {
     doc.setFontSize(9);
 
     // Firma 1: Profesor (Juan A. Lezama)
-    doc.line(30, lineY, 80, lineY);
-    doc.text("Juan A. Lezama Suescun", 55, labelY, { align: "center" });
-    doc.text("Profesor", 55, labelY + 4, { align: "center" });
+    //doc.line(30, lineY, 80, lineY);
+    //doc.text("Juan A. Lezama Suescun", 55, labelY, { align: "center" });
+    //doc.text("Profesor", 55, labelY + 4, { align: "center" });
 
     // Firma 2: Coordinación
-    doc.line(width/2 - 25, lineY, width/2 + 25, lineY);
-    doc.text("Firma Autorizada", width / 2, labelY, { align: "center" });
-    doc.text("Coordinador Académico", width / 2, labelY + 4, { align: "center" });
+    //doc.line(width/2 - 25, lineY, width/2 + 25, lineY);
+    //doc.text("Firma Autorizada", width / 2, labelY, { align: "center" });
+    //doc.text("Coordinador Académico", width / 2, labelY + 4, { align: "center" });
 
     // Firma 3: Director
-    doc.line(width - 80, lineY, width - 30, lineY);
-    doc.text("Firma Autorizada", width - 55, labelY, { align: "center" });
-    doc.text("Director General", width - 55, labelY + 4, { align: "center" });
+    //doc.line(width - 80, lineY, width - 30, lineY);
+    //doc.text("Firma Autorizada", width - 55, labelY, { align: "center" });
+    //doc.text("Director General", width - 55, labelY + 4, { align: "center" });
 
     // --- PÁGINA 2: REVERSO (CONTENIDOS) ---
     doc.addPage('l', 'mm', 'a4');
