@@ -38,7 +38,7 @@ function renderCatalog() {
                     <span class="badge">${curso.nivel || 'Fundamentos'}</span>
                     <h3>${curso.titulo}</h3>
                     <p>${curso.descripcion || 'Introductorio.'}</p>
-                    <p><strong>⏱ Duración:</strong> ${curso.duracion || 'A mi propio ritmo'}</p>
+                    <p><strong>⏱ Duración:</strong> ${curso.duracion || '10 minutos'}</p>
                     <button class="btn-primary" onclick="showView('classroom', ${index})">Ver para crear</button>
                 </div>
             </div>`;
@@ -77,10 +77,10 @@ function renderClassroom(index) {
                     <button class="btn-primary" style="background:#2c3e50; margin-bottom:10px;">Ir al curso</button>
                 </a>
                 <hr>
-                <h4>Facilitadores</h4>
-                <p style="font-size:0.85rem; color:#444;">Credenciales.</p>
-                <input type="text" id="alumnoNombre" placeholder="..." style="width:90%; padding:8px; margin-bottom:10px;">
-                <input type="text" id="codigoSecreto" placeholder="..." style="width:90%; padding:8px; margin-bottom:10px;">
+                <h4>Participante</h4>
+                <p style="font-size:0.85rem; color:#444;">Certificación.</p>
+                <input type="text" id="alumnoNombre" placeholder="Nombre" style="width:90%; padding:8px; margin-bottom:10px;">
+                <input type="text" id="codigoSecreto" placeholder="Código" style="width:90%; padding:8px; margin-bottom:10px;">
                 <button class="btn-primary" onclick="validarYGenerar(${index})">Verificar y Descargar</button>
                 <p style="font-size:0.8rem; color:#666; margin-top:10px;">* Validado por humanos.</p>
             </aside>
