@@ -7,7 +7,7 @@
 // 1. Catálogo de Cursos con Contenido Programático para el Reverso
 const COURSES = [
     {
-        id: "ch",
+        id: "Bienvenido a La Convención Del Cuidado Humano 2026 - 2027",
         idioma: "Convensión Del Cuidado Humano. Ser A través del Ser. Primera Edición. De la Era de Acuario",
         titulo: "Convención del cuidado humano: una conexión con el Ser",
         video: "https://www.youtube.com/embed/vwfiT5qnHHY?si=yuV3jk4ND59bQFRc",
