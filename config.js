@@ -47,7 +47,7 @@ async function generateCertPDF(nombre, cursoObj, googleCode) {
     doc.setFont("times", "bold");
     doc.setFontSize(28);
     doc.setTextColor(0, 38, 38);
-    doc.text("MentX | Glocal Academy", width / 2, 30, { align: "center" });
+    doc.text("MentX | Para mentes curiosas", width / 2, 30, { align: "center" });
     
     doc.setFontSize(11);
     doc.setFont("helvetica", "bold");
