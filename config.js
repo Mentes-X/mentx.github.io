@@ -7,7 +7,7 @@
 // 1. Catálogo de Cursos con Contenido Programático para el Reverso
 const COURSES = [
     {
-        id: "arab",
+        id: "Convención del cuidado humano: una conexión con el Ser",
         idioma: "Árabe",
         titulo: "Convención del cuidado humano: una conexión con el Ser",
         video: "https://www.youtube.com/embed/vwfiT5qnHHY?si=yuV3jk4ND59bQFRc",
