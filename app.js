@@ -1,13 +1,10 @@
 /**
- * MentX | Glocal Academy - app.js
+ * MentX - app.js
  * Gestión de vistas y validación dinámica de certificaciones
  */
 
 const main = document.getElementById('main-content');
 
-/**
- * Control de Vistas
- */
 function showView(view, data = null) {
     if (view === 'catalog') {
         renderCatalog();
@@ -17,9 +14,6 @@ function showView(view, data = null) {
     window.scrollTo(0, 0);
 }
 
-/**
- * Vista de Catálogo (Interfaz Principal)
- */
 function renderCatalog() {
     let html = `
         <header class="catalog-header">
@@ -48,9 +42,6 @@ function renderCatalog() {
     main.innerHTML = html;
 }
 
-/**
- * Vista de Aula Virtual
- */
 function renderClassroom(index) {
     const curso = COURSES[index];
     main.innerHTML = `
@@ -79,44 +70,38 @@ function renderClassroom(index) {
                 <hr>
                 <h4>Participante</h4>
                 <p style="font-size:0.85rem; color:#444;">Certificación.</p>
-                <input type="text" id="alumnoNombre" placeholder="Nombre" style="width:90%; padding:8px; margin-bottom:10px;">
-                <input type="text" id="codigoSecreto" placeholder="Código" style="width:90%; padding:8px; margin-bottom:10px;">
-                <button class="btn-primary" onclick="validarYGenerar(${index})">Verificar y Descargar</button>
+                <input type="text" id="alumnoNombre" placeholder="Nombre completo" style="width:90%; padding:8px; margin-bottom:10px;">
+                <input type="text" id="codigoSecreto" placeholder="Código (MX-2026-XXX)" style="width:90%; padding:8px; margin-bottom:10px;">
+                <button id="btnDescargar" class="btn-primary" onclick="validarYGenerar(${index})">Verificar y Descargar</button>
                 <p style="font-size:0.8rem; color:#666; margin-top:10px;">* Validado por humanos.</p>
             </aside>
         </div>
     `;
 }
 
-/**
- * Validación Dinámica MentX (Sincronizada con Google Sheets)
- * Ahora incluye validación por ID de curso para evitar fraude.
- */
 async function validarYGenerar(index) {
     const curso = COURSES[index];
     const nombreInput = document.getElementById('alumnoNombre').value.trim();
     const codigoInput = document.getElementById('codigoSecreto').value.trim();
+    const btn = document.getElementById('btnDescargar');
     
     if (!nombreInput || !codigoInput) {
         alert("Por favor, ingresa tu nombre completo y el código de aprobación enviado a tu correo.");
         return;
     }
 
-    // URL de tu Web App de Google Apps Script (Código Puente)
     const DEPLOY_URL = "https://script.google.com/macros/s/AKfycbzWecJHGdzARl7jNCt1k6JztmR1iDca5L3TMQcvvhP0JMX9RkuVBfmEmaoVB51NlRxp2g/exec"; 
 
     try {
-        console.log(`Verificando acceso para ${curso.titulo}...`);
+        btn.disabled = true;
+        btn.innerText = "Verificando...";
         
-        // Enviamos Nombre, Código y el ID del curso actual (curso.id) para validación cruzada
         const queryParams = `?nombre=${encodeURIComponent(nombreInput)}&codigo=${encodeURIComponent(codigoInput)}&cursoId=${encodeURIComponent(curso.id)}`;
-        
         const response = await fetch(DEPLOY_URL + queryParams);
         const resultado = await response.json();
 
         if (resultado.autorizado) {
-            // Generación del PDF de dos páginas (definido en config.js)
-            generateCertPDF(nombreInput, curso, codigoInput.toUpperCase());
+            await generateCertPDF(nombreInput, curso, codigoInput.toUpperCase());
             alert("¡Felicidades! Identidad verificada. Tu certificado se está generando.");
         } else {
             alert("Acceso denegado: Los datos no coinciden o el código no pertenece a este curso.");
@@ -124,8 +109,10 @@ async function validarYGenerar(index) {
     } catch (error) {
         console.error("Error de comunicación con MentX Cloud:", error);
         alert("No se pudo conectar con el servidor de validación. Verifica tu conexión a internet.");
+    } finally {
+        btn.disabled = false;
+        btn.innerText = "Verificar y Descargar";
     }
 }
 
-// Iniciar aplicación en la vista de catálogo
 showView('catalog');

@@ -1,5 +1,5 @@
 /**
- * MentX | Glocal Academy - Configuración de Certificación Dual
+ * MentX - Configuración de Certificación Dual
  * Dominio: mentx.org
  * Ubicación: Mérida, Venezuela
  */
@@ -7,10 +7,14 @@
 // 1. Catálogo de Cursos con Contenido Programático para el Reverso
 const COURSES = [
     {
-        id: "Convención del cuidado humano: una conexión con el Ser",
-        idioma: "Árabe",
+        id: "convencion",
+        nivel: "Fundamentos",
+        duracion: "10 minutos",
+        descripcion: "Introductorio a la primera edición de la Era de Acuario.",
         titulo: "Convención del cuidado humano: una conexión con el Ser",
         video: "https://www.youtube.com/embed/vwfiT5qnHHY?si=yuV3jk4ND59bQFRc",
+        contenido: "Este curso explora la convención del cuidado humano: ser a través del ser en su primera edición de la Era de Acuario.",
+        tarea_url: "#", // Reemplaza "#" con el enlace de tu formulario de Google
         temario: [
             "Introducción a la convención 2026 - 2027",
             "Leyenda",
@@ -18,7 +22,7 @@ const COURSES = [
             "Resumen ejecutivo",
             "7 luminarias de inmersión"
         ]
-   }
+    }
 ];
 
 // 2. Lógica de Generación de PDF (Anverso y Reverso)
@@ -40,10 +44,10 @@ async function generateCertPDF(nombre, cursoObj, googleCode) {
         doc.addImage("logo-mentx.png", 'PNG', 15, 15, 22, 22); 
         doc.addImage("logo-ch.png", 'PNG', width - 37, 15, 22, 22);
     } catch (e) { 
-        console.warn("Logos no encontrados. Verifique las rutas."); 
+        console.warn("Logos no encontrados. Verifique las rutas en la carpeta raíz."); 
     }
 
-    // Cabecera MentX | Glocal Academy
+    // Cabecera MentX
     doc.setFont("times", "bold");
     doc.setFontSize(28);
     doc.setTextColor(0, 38, 38);
@@ -70,8 +74,7 @@ async function generateCertPDF(nombre, cursoObj, googleCode) {
     doc.setFont("times", "bolditalic");
     doc.text(cursoObj.titulo, width / 2, 102, { align: "center" });
 
-    // --- BLOQUE DE CÓDIGO ACTUALIZADO: QR DE VERIFICACIÓN ---
-    // El QR ahora apunta directamente a la página de verificación con el folio dinámico
+    // --- QR DE VERIFICACIÓN ---
     const urlVerificador = `https://mentx.org/verificar.html?codigo=${googleCode}`;
     const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(urlVerificador)}`;
     
@@ -80,28 +83,6 @@ async function generateCertPDF(nombre, cursoObj, googleCode) {
     doc.setFontSize(9);
     doc.setTextColor(100);
     doc.text(`ID Validación: ${googleCode}`, width / 2, 146, { align: "center" });
-    // ------------------------------------------------------
-
-    // Firmas Digitales Alineadas
-    const lineY = 175;
-    const labelY = 181;
-    doc.setTextColor(0, 0, 0);
-    doc.setFontSize(9);
-
-    // Firma 1: Profesor (Juan A. Lezama)
-    //doc.line(30, lineY, 80, lineY);
-    //doc.text("Juan A. Lezama Suescun", 55, labelY, { align: "center" });
-    //doc.text("Profesor", 55, labelY + 4, { align: "center" });
-
-    // Firma 2: Coordinación
-    //doc.line(width/2 - 25, lineY, width/2 + 25, lineY);
-    //doc.text("Firma Autorizada", width / 2, labelY, { align: "center" });
-    //doc.text("Coordinador Académico", width / 2, labelY + 4, { align: "center" });
-
-    // Firma 3: Director
-    //doc.line(width - 80, lineY, width - 30, lineY);
-    //doc.text("Firma Autorizada", width - 55, labelY, { align: "center" });
-    //doc.text("Director General", width - 55, labelY + 4, { align: "center" });
 
     // --- PÁGINA 2: REVERSO (CONTENIDOS) ---
     doc.addPage('l', 'mm', 'a4');
