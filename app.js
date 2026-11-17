@@ -33,7 +33,7 @@ function renderCatalog() {
                     <h3>${curso.titulo}</h3>
                     <p>${curso.descripcion || 'Introductorio.'}</p>
                     <p><strong>⏱ Duración:</strong> ${curso.duracion || '10 minutos'}</p>
-                    <button class="btn-primary" onclick="showView('classroom', ${index})">Ver para crear</button>
+                    <button class="btn-primary" onclick="showView('classroom', ${index})">Ver para participar</button>
                 </div>
             </div>`;
     });
@@ -55,21 +55,21 @@ function renderClassroom(index) {
                     <h2 class="${curso.dir || ''}">${curso.titulo}</h2>
                     <hr>
                     <div class="text-content ${curso.dir || ''}">
-                        ${curso.contenido || 'Este curso explora la convención del cuidado humano ser a través del ser en su primera edición de la Era de Acuario.'}
+                        ${curso.contenido || 'Este curso explora la convención del cuidado humano ser a través del ser en su primera edición de la era de Acuario.'}
                     </div>
                 </div>
             </div>
             
             <aside class="sidebar-info">
                 <h3>Progreso y Tareas</h3>
-                <p>Este curso es para aprender <strong>a su propio ritmo</strong>.</p>
-                <p>Para participar en la convención, debes completarlo.</p>
+                <p>Esta introducción es funamental para <strong>participar en la convención</strong>.</p>
+                <p>Ahora completa el formulario a continuación.</p>
                 <a href="${curso.tarea_url || '#'}" target="_blank">
-                    <button class="btn-primary" style="background:#2c3e50; margin-bottom:10px;">Ir al curso</button>
+                    <button class="btn-primary" style="background:#2c3e50; margin-bottom:10px;">Ir a la evaluación</button>
                 </a>
                 <hr>
                 <h4>Participante</h4>
-                <p style="font-size:0.85rem; color:#444;">Certificación.</p>
+                <p style="font-size:0.85rem; color:#444;">Descarga tu certificado</p>
                 <input type="text" id="alumnoNombre" placeholder="Nombre completo" style="width:90%; padding:8px; margin-bottom:10px;">
                 <input type="text" id="codigoSecreto" placeholder="Código (MX-2026-XXX)" style="width:90%; padding:8px; margin-bottom:10px;">
                 <button id="btnDescargar" class="btn-primary" onclick="validarYGenerar(${index})">Verificar y Descargar</button>

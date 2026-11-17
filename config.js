@@ -10,11 +10,11 @@ const COURSES = [
         id: "convencion",
         nivel: "Fundamentos",
         duracion: "10 minutos",
-        descripcion: "Introductorio a la primera edición de la Era de Acuario.",
+        descripcion: "Introductorio a la primera edición de la era de Acuario.",
         titulo: "Convención del cuidado humano: una conexión con el Ser",
         video: "https://www.youtube.com/embed/vwfiT5qnHHY?si=yuV3jk4ND59bQFRc",
-        contenido: "Este curso explora la convención del cuidado humano: ser a través del ser en su primera edición de la Era de Acuario.",
-        tarea_url: "#", // Reemplaza "#" con el enlace de tu formulario de Google
+        contenido: "Este curso explora la convención del cuidado humano: ser a través del ser en su primera edición de la era de Acuario.",
+        tarea_url: "https://docs.google.com/forms/d/e/1FAIpQLSdDb-mVl21V_h1d0BgZaRaFRsU1Tzy2n_ofrm5UjxXtyKd-AQ/viewform?usp=header", // Reemplaza "#" con el enlace de tu formulario de Google
         temario: [
             "Introducción a la convención 2026 - 2027",
             "Leyenda",
