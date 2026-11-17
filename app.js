@@ -33,7 +33,7 @@ function renderCatalog() {
                     <h3>${curso.titulo}</h3>
                     <p>${curso.descripcion || 'Introductorio.'}</p>
                     <p><strong>⏱ Duración:</strong> ${curso.duracion || '10 minutos'}</p>
-                    <button class="btn-primary" onclick="showView('classroom', ${index})">Ver para participar</button>
+                    <button class="btn-primary" onclick="showView('classroom', ${index})">Ver</button>
                 </div>
             </div>`;
     });
@@ -63,15 +63,15 @@ function renderClassroom(index) {
             <aside class="sidebar-info">
                 <h3>Progreso y Tareas</h3>
                 <p>Esta introducción es funamental para <strong>participar en la convención</strong>.</p>
-                <p>Ahora completa el formulario a continuación.</p>
+                <p>Completa el formulario a continuación.</p>
                 <a href="${curso.tarea_url || '#'}" target="_blank">
-                    <button class="btn-primary" style="background:#2c3e50; margin-bottom:10px;">Ir a la evaluación</button>
+                    <button class="btn-primary" style="background:#2c3e50; margin-bottom:10px;">Participar</button>
                 </a>
                 <hr>
                 <h4>Participante</h4>
                 <p style="font-size:0.85rem; color:#444;">Descarga tu certificado</p>
                 <input type="text" id="alumnoNombre" placeholder="Nombre completo" style="width:90%; padding:8px; margin-bottom:10px;">
-                <input type="text" id="codigoSecreto" placeholder="Código (MX-2026-XXX)" style="width:90%; padding:8px; margin-bottom:10px;">
+                <input type="text" id="codigoSecreto" placeholder="Código (M...)" style="width:90%; padding:8px; margin-bottom:10px;">
                 <button id="btnDescargar" class="btn-primary" onclick="validarYGenerar(${index})">Verificar y Descargar</button>
                 <p style="font-size:0.8rem; color:#666; margin-top:10px;">* Validado por humanos.</p>
             </aside>
