@@ -18,8 +18,8 @@ const COURSES = [
         temario: [
             "Introducción a la convención del Cuidado Humano Ser a través del Ser 2026 - 2033",
             "Bienvenida con invitación al septenato de Acuario y práctica meditativa",
-            "Leyendas de la convención con el motivo de la constelación de acuario",
-            "Llegar a la convención desde cuidadohumano.org y un breve atarrizaje por la página de la convención",
+            "Leyendas de la convención con el motivo de la constelación de Acuario",
+            "Llegar a la convención desde cuidadohumano.org y un breve aterrizaje por la página de la convención",
             "«Después de ver el vídeo: lee el manifiesto y el resumen ejecutivo de la convención en el blog»"            
         ]
     }

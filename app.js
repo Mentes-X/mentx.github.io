@@ -55,7 +55,7 @@ function renderClassroom(index) {
                     <h2 class="${curso.dir || ''}">${curso.titulo}</h2>
                     <hr>
                     <div class="text-content ${curso.dir || ''}">
-                        ${curso.contenido || 'Este curso explora la convención del cuidado humano ser a través del ser en su primera edición de la era de Acuario.'}
+                        ${curso.contenido || 'Este curso explora la convención del cuidado humano ser a través del ser en su primera edición de la era de Acuario. Después de ver el vídeo lee el manifiesto y el resumen ejecutivo de la convención en el blog'}
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@ function renderClassroom(index) {
                 <h3>Progreso y Tareas</h3>
                 <p>Esta introducción es funamental para <strong>participar en la convención</strong>.</p>
                 <p>Completa el formulario a continuación.</p>
-                <a href="${curso.tarea_url || '#'}" target="_blank">
+                <a href="${curso.tarea_url || 'https://docs.google.com/forms/d/e/1FAIpQLSdDb-mVl21V_h1d0BgZaRaFRsU1Tzy2n_ofrm5UjxXtyKd-AQ/viewform?usp=header'}" target="_blank">
                     <button class="btn-primary" style="background:#2c3e50; margin-bottom:10px;">Participar</button>
                 </a>
                 <hr>
