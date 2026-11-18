@@ -13,6 +13,7 @@
         .invalid { color: #cc0000; }
         .details { text-align: left; background: #fafafa; padding: 15px; border-radius: 8px; display: none; line-height: 1.5; }
         .details ul { padding-left: 20px; margin-top: 8px; }
+        .details li { margin-bottom: 6px; }
         .loader { border: 4px solid #f3f3f3; border-top: 4px solid #007554; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 20px auto; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
@@ -36,6 +37,9 @@
         <ul id="res-contenido"></ul>
     </div>
 </div>
+
+<!-- Se enlaza config.js como fuente única del temario y títulos -->
+<script src="config.js"></script>
 
 <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -61,19 +65,28 @@
                 document.getElementById('status-msg').innerHTML = "✅ Certificado Auténtico";
                 document.getElementById('status-msg').className = "status valid";
                 
+                // Busca el curso correspondiente en config.js usando el cursoId devuelto por Google
+                const cursoObj = (typeof COURSES !== 'undefined') 
+                    ? COURSES.find(c => c.id === datos.cursoId) || COURSES[0] 
+                    : null;
+
                 document.getElementById('res-folio').innerText = folio;
                 document.getElementById('res-nombre').innerText = datos.nombre || "N/A";
-                document.getElementById('res-curso').innerText = datos.curso || "Programa MentX";
+                document.getElementById('res-curso').innerText = cursoObj ? cursoObj.titulo : "Programa MentX";
                 
                 const fechaObj = new Date(datos.fecha);
                 document.getElementById('res-fecha').innerText = !isNaN(fechaObj) ? fechaObj.toLocaleDateString('es-VE') : "Vigente 2026";
                 
+                // Renderiza el arreglo exacto de 'temario' definido en config.js
                 const lista = document.getElementById('res-contenido');
                 lista.innerHTML = "";
-                const temas = datos.contenido ? datos.contenido.split(',') : ["Formación académica completa"];
+                const temas = (cursoObj && Array.isArray(cursoObj.temario)) 
+                    ? cursoObj.temario 
+                    : ["Formación académica completa"];
+                
                 temas.forEach(tema => {
                     let li = document.createElement('li');
-                    li.innerText = tema.trim();
+                    li.innerText = tema;
                     lista.appendChild(li);
                 });
 

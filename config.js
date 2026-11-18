@@ -4,7 +4,7 @@
  * Ubicación: Mérida, Venezuela
  */
 
-// 1. Catálogo de Cursos con Contenido Programático para el Reverso
+// 1. Catálogo de Cursos con Contenido Programático para el Reverso y Verificación QR
 const COURSES = [
     {
         id: "convencion",
@@ -14,7 +14,7 @@ const COURSES = [
         titulo: "Convención del cuidado humano: una conexión con el Ser",
         video: "https://www.youtube.com/embed/jdJcZFy7Rs4?si=IhMoxuRxNKEMHixQ",
         contenido: "Este curso explora la convención del cuidado humano: ser a través del ser en su primera edición de la era de Acuario.",
-        tarea_url: "https://docs.google.com/forms/d/e/1FAIpQLSdDb-mVl21V_h1d0BgZaRaFRsU1Tzy2n_ofrm5UjxXtyKd-AQ/viewform?usp=header", // Reemplaza "#" con el enlace de tu formulario de Google
+        tarea_url: "https://docs.google.com/forms/d/e/1FAIpQLSdDb-mVl21V_h1d0BgZaRaFRsU1Tzy2n_ofrm5UjxXtyKd-AQ/viewform?usp=header",
         temario: [
             "Introducción a la convención del Cuidado Humano Ser a través del Ser 2026 - 2033",
             "Bienvenida con invitación al septenato de Acuario y práctica meditativa",
