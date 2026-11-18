@@ -13,7 +13,15 @@ const COURSES = [
         descripcion: "Introductorio a la primera edición de la era de Acuario.",
         titulo: "Convención del cuidado humano: una conexión con el Ser",
         video: "https://www.youtube.com/embed/jdJcZFy7Rs4?si=IhMoxuRxNKEMHixQ",
-        contenido: "Este curso explora la convención del cuidado humano: ser a través del ser en su primera edición de la era de Acuario.",
+        contenido: `
+            <p>Este curso explora la <strong>Convención del Cuidado Humano: Ser a través del Ser</strong> en su primera edición de la era de Acuario (2026 - 2033).</p>
+            <p><strong>Pasos recomendados para completar la experiencia:</strong></p>
+            <ul>
+                <li>Observa atentamente el vídeo introductorio y realiza la práctica meditativa propuesta.</li>
+                <li>Después de ver el vídeo, lee el <strong>manifiesto</strong> y el <strong>resumen ejecutivo</strong> de la convención en el blog de <a href="https://cuidadohumano.org" target="_blank">cuidadohumano.org</a>.</li>
+                <li>Completa el formulario de participación en el panel lateral para registrar tu asistencia y recibir tu código único de certificación.</li>
+            </ul>
+        `,
         tarea_url: "https://docs.google.com/forms/d/e/1FAIpQLSdDb-mVl21V_h1d0BgZaRaFRsU1Tzy2n_ofrm5UjxXtyKd-AQ/viewform?usp=header",
         temario: [
             "Introducción a la convención del Cuidado Humano Ser a través del Ser 2026 - 2033",
@@ -75,8 +83,7 @@ async function generateCertPDF(nombre, cursoObj, googleCode) {
     doc.text(cursoObj.titulo, width / 2, 102, { align: "center" });
 
     // --- QR DE VERIFICACIÓN ---
-    const urlVerificador = `https://mentx.org/verificar.html?codigo=${googleCode}`;
-    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(urlVerificador)}`;
+    const urlVerificador = `https://mentx.org/verificar.html?codigo=${googleCode}`; const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(urlVerificador)}`;
     
     doc.addImage(qrUrl, 'PNG', (width / 2) - 15, 112, 30, 30);
     
@@ -101,7 +108,7 @@ async function generateCertPDF(nombre, cursoObj, googleCode) {
     
     let currentY = 55;
     cursoObj.temario.forEach((item, index) => {
-        doc.text(`${index + 1}. ${item}`, 35, currentY);
+        doc.text(`${index + 1}.${item}`, 35, currentY);
         currentY += 12;
     });
 
