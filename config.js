@@ -16,11 +16,11 @@ const COURSES = [
         contenido: "Este curso explora la convención del cuidado humano: ser a través del ser en su primera edición de la era de Acuario.",
         tarea_url: "https://docs.google.com/forms/d/e/1FAIpQLSdDb-mVl21V_h1d0BgZaRaFRsU1Tzy2n_ofrm5UjxXtyKd-AQ/viewform?usp=header", // Reemplaza "#" con el enlace de tu formulario de Google
         temario: [
-            "Introducción a la convención del Cuidado Humano Ser a través del Ser en su primera edición de la era de Acuario 2026 - 2033",
+            "Introducción a la convención del Cuidado Humano Ser a través del Ser 2026 - 2033",
             "Bienvenida con invitación al septenato de Acuario y práctica meditativa",
             "Leyendas de la convención con el motivo de la constelación de acuario",
-            "Cómo llegar a la convención desde cuidadohumano.org y un breve atarrizaje por la página de la convención",
-            "¡Lo que faltó! recomendarles leer el manifiesto de la convención y el resumen ejecutivo así que no se lo pierdan"            
+            "Llegar a la convención desde cuidadohumano.org y un breve atarrizaje por la página de la convención",
+            "«Después de ver el vídeo: lee el manifiesto y el resumen ejecutivo de la convención en el blog»"            
         ]
     }
 ];

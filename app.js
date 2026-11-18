@@ -32,7 +32,7 @@ function renderCatalog() {
                     <span class="badge">${curso.nivel || 'Fundamentos'}</span>
                     <h3>${curso.titulo}</h3>
                     <p>${curso.descripcion || 'Introductorio.'}</p>
-                    <p><strong>⏱ Duración:</strong> ${curso.duracion || '10 minutos'}</p>
+                    <p><strong>⏱ Duración:</strong> ${curso.duracion || '25:54 minutos'}</p>
                     <button class="btn-primary" onclick="showView('classroom', ${index})">Ver</button>
                 </div>
             </div>`;
