@@ -55,7 +55,8 @@ function renderClassroom(index) {
                     <h2 class="${curso.dir || ''}">${curso.titulo}</h2>
                     <hr>
                     <div class="text-content ${curso.dir || ''}">
-                        ${curso.contenido || 'Este curso explora la convención del cuidado humano ser a través del ser en su primera edición de la era de Acuario. Después de ver el vídeo lee el manifiesto y el resumen ejecutivo de la convención en el blog'}
+                        ${curso.contenido || 'Este curso explora la convención del cuidado humano ser a través del ser en su primera edición de la era de Acuario.
+                        Después de ver el vídeo lee el manifiesto y el resumen ejecutivo de la convención en el blog'}
                     </div>
                 </div>
             </div>
